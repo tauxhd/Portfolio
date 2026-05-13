@@ -40,7 +40,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full"
           style={{ background: 'radial-gradient(circle, rgba(212,160,23,0.08) 0%, transparent 70%)' }}
         />
         <div

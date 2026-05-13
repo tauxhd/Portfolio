@@ -7,7 +7,7 @@ const links = [
   { label: 'GitHub', handle: '@tauxhd', href: 'https://github.com/tauxhd', icon: GitFork, color: '#ffffff' },
   { label: 'LinkedIn', handle: 'Tauedea Gabi', href: 'https://www.linkedin.com/in/tauxhd', icon: Link, color: '#0A66C2' },
   { label: 'Figma', handle: '@tauxhd', href: 'https://www.figma.com/@tauxhd', icon: PenTool, color: '#F24E1E' },
-  { label: 'Email', handle: 'gabitautau@gmail.com', href: 'mailto:hello@tauedea.dev', icon: Mail, color: '#D4A017' },
+  { label: 'Email', handle: 'gabitautau@gmail.com', href: 'mailto:gabitautau@gmail.com', icon: Mail, color: '#D4A017' },
 ]
 
 export default function Contact() {
