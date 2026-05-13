@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tauedea Gabi — Portfolio
+
+Personal portfolio website showcasing my software engineering projects and UI/UX design work. Built with Next.js 14, Tailwind CSS, and Neon DB.
+
+🔗 **Live site:** [portfolio-snowy-psi-59.vercel.app](https://portfolio-snowy-psi-59.vercel.app)
+
+---
+
+## Features
+
+- **Animated hero** with typewriter effect cycling through roles
+- **About section** with tech stack and university info
+- **Projects section** powered by Neon DB — dynamically loaded, no hardcoding
+- **Admin panel** at `/admin` — password-protected, lets me add or delete projects without touching code
+- **Design work section** linking to my Figma community profile
+- **Contact section** with links to GitHub, LinkedIn, Figma and email
+- **Fully responsive** — works on mobile, tablet and desktop
+- **Black & gold theme** with smooth scroll animations
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Database | Neon DB (Serverless Postgres) |
+| Auth | iron-session (cookie-based) |
+| Deployment | Vercel |
+
+---
+
+## Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── admin/
+│   │   └── page.tsx          # Admin login page
+│   ├── api/
+│   │   ├── admin/
+│   │   │   └── login/
+│   │   │       └── route.ts  # Login & logout API
+│   │   └── projects/
+│   │       └── route.ts      # Projects CRUD API
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx              # Main page
+├── components/
+│   ├── sections/
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Design.tsx
+│   │   └── Contact.tsx
+│   └── Navbar.tsx
+├── lib/
+│   ├── db.ts                 # Neon DB client & queries
+│   └── session.ts            # iron-session config
+└── scripts/
+    └── setup-db.js           # DB setup & seed script
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+
+- A [Neon DB](https://neon.tech) account (free)
+
+### Installation
+
+1. Clone the repo
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/tauxhd/portfolio.git
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables — create a `.env.local` file in the root:
+```env
+DATABASE_URL=your_neon_connection_string
+ADMIN_PASSWORD=your_chosen_password
+SESSION_SECRET=a_random_32_character_string
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Set up the database
+```bash
+node scripts/setup-db.js
+```
 
-## Learn More
+5. Run the dev server
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) to view it.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Admin Panel
 
-## Deploy on Vercel
+To add or delete projects without touching code:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Go to `/admin` on your live site
+2. Enter your admin password
+3. A floating **+** button will appear on the projects section
+4. Click it to add a new project via a modal form
+5. Hover over any project card and click the trash icon to delete it
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Deployment
+
+The site is deployed on Vercel with automatic deployments on every push to `main`.
+
+To deploy your own version:
+
+1. Push the repo to GitHub
+2. Import it on [vercel.com](https://vercel.com)
+3. Add the three environment variables (`DATABASE_URL`, `ADMIN_PASSWORD`, `SESSION_SECRET`)
+4. Deploy
+
+---
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Built by [Tauedea Arehui Gabi](https://www.linkedin.com/in/tauxhd) • [GitHub](https://github.com/tauxhd) • [Figma](https://www.figma.com/@tauxhd)
